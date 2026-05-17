@@ -62,7 +62,10 @@ static void _InitClocks(void)
 //--------------------------------------------------------------------------------------------------
 static void _InitGpio(void)
 {
-    pinMode(GPIO_PIN_BUILTIN_LED, OUTPUT);
+    GPIO_BUILTIN_LED_MODE(OUTPUT);
+    GPIO_EN_BTS7960_L_WHEEL_MODE(OUTPUT);
+    GPIO_LPWM_BTS7960_L_WHEEL_MODE(OUTPUT);
+    GPIO_RPWM_BTS7960_L_WHEEL_MODE(OUTPUT);
 }
 
 static void _InitSerial(void)

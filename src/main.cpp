@@ -1,5 +1,6 @@
 #include <ll_board.h>
 #include "heartbeat.h"
+#include "motors.h"
 
 uint32_t _tick;
 
@@ -11,6 +12,7 @@ void setup()
   YAUS_Init();
 
   HEARTBEAT_Init();
+  MOTORS_Init();
 
   _tick = YAUS_TickCount();
 }
