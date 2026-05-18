@@ -11,9 +11,9 @@
 // Fichiers Inclus
 //-----------------------------------------------------------------------------
 #ifdef YAUS_USE_ARCH
-    #include <arch.h>
+#include <arch.h>
 #else
-    #include <_YauS_.h>
+#include <_YauS_.h>
 #endif
 
 //-----------------------------------------------------------------------------
@@ -98,10 +98,17 @@ typedef struct
     float flow[12];
 } s_RACK_NUMBER_EVENT;
 
-typedef struct 
+typedef struct
 {
     uint16_t state;
 } s_DEVICE_EVENT;
+
+typedef struct
+{
+    int8_t direction;
+    uint8_t speed_left;
+    uint8_t speed_right;
+} s_MOTOR_EVENT;
 
 typedef struct //--- s_EVENT
 {
@@ -119,6 +126,7 @@ typedef struct //--- s_EVENT
     s_CAMP_EVENT camp;
     s_RACK_NUMBER_EVENT rack;
     s_DEVICE_EVENT device;
+    s_MOTOR_EVENT motor;
 } s_EVENT;
 
 #define NO_EVENT 0x0000
@@ -137,8 +145,8 @@ typedef struct //--- s_EVENT
 #define CAMP_EVENT (uint32_t)(1 << 13)
 #define MEAS_PRESS_EVENT (uint32_t)(1 << 14)
 #define SELECT_RACK_EVENT (uint32_t)(1 << 15)
-#define DEVICE_EVENT (uint32_t) (1 << 16)
-#define MOTORS_EVENT (uint32_t) (1 << 17)
+#define DEVICE_EVENT (uint32_t)(1 << 16)
+#define MOTORS_EVENT (uint32_t)(1 << 17)
 
 //-----------------------------------------------------------------------------
 // Fonctions publiques

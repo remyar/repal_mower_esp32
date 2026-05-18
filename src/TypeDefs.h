@@ -122,16 +122,11 @@ typedef struct
     uint32_t ver;               //-- Version
 } s_CHIP;
 
-typedef enum {
+typedef enum
+{
     NO_DIRECTION = -1,
     FORWARD_DIRECTION,
     BACKWARD_DIRECTION
 } e_MOWER_DIRECTION;
-
-typedef struct {
-    e_MOWER_DIRECTION direction;
-    uint8_t speed_left;
-    uint8_t speed_right;
-} s_MOWER;
 
 #endif
